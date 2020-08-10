@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="./styles.css">
+  <link rel="stylesheet" id="google-fonts-1-css" href="https://fonts.googleapis.com/css?family=Muli%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CUbuntu%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CRaleway%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic&amp;ver=5.4.2" type="text/css" media="all">
+  <title>Contact Us</title>
+</head>
+<body>
+  <nav class="topNavigation mainBgColor">
+    <div class="navBar">
+      <div class="navBar__logo">
+        <a href="https://www.conlabz.de/" >
+          <img src="https://www.conlabz.de/wp-content/uploads/sites/2/2018/04/conlabz_logo_white.png" alt="Conlabz GmbH" target="_self">
+        </a>
+      </div>
+
+      <ul class="navBar__links">
+        <li><a href="https://www.conlabz.de/google-ads-2-3/">Google Ads</a></li>
+        <li><a href="https://www.conlabz.de/magento-agentur/">Magento Partner</a></li>
+        <li><a href="https://www.conlabz.de/cleverreach-agentur-koblenz/">CleverReach Partner</a></li>
+        <li><a href="https://www.conlabz.de/jobs-bei-conlabz/">Jobs</a></li>
+      </ul>
+    </div>
+  </nav>
+  <section class="banner mainBgColor">
+    <div class="container">
+      <div class="banner__img">
+        <img src="https://www.conlabz.de/wp-content/uploads/sites/2/2019/01/willhelm_koblenz-1.svg" alt="Conlabz Gmbh" target="_self" >
+      </div>
+      <div class="banner__caption">
+        <h1>Contact Us</h1>
+        We will be in touch with you
+      </div>
+    </div>
+  </section>
+
+  <section class="container mainContact">
+    <form method="post" class="contact-form" action="#" id="contact_form">
+      <h2>Contact Us </h2>
+    
+      <fieldset class="material">
+          <input type="text" autocomplete="off" required id="subject">
+          <hr>
+          <label>Subject</label>
+	   </fieldset>
+
+      <fieldset class="material">
+          <input type="text" autocomplete="off" required id="name">
+          <hr>
+          <label>Name</label>
+	   </fieldset>
+      
+      <fieldset class="material">
+          <input type="text" autocomplete="off" required id="email">
+          <hr>
+          <label>Email</label>
+	   </fieldset>
+        
+      <fieldset class="material">
+          <textarea 
+            type="text" 
+            id="message" 
+            name="message" 
+            required
+            autocomplete="off"></textarea>
+          <hr>
+          <label>Type Your Message</label>
+	   </fieldset>
+      
+        
+       <button type="submit" class="btn">Submit</button> 
+    </form>
+    <div id="form_data">
+      <h3>
+        Dear <span id="user_name"></span></h3>
+        <br />
+        We recieved the following message from you and will contact you as soon as possible.
+     <h3>subject:</h3><div id="user_subject"></div> 
+     <h3>Contact Email:</h3> <div id="user_email"></div>
+     <h3>Your message:</h3> <div id="user_message"></div>
+    </div>
+  </section>
+
+  <footer class="secondaryBgColor">
+    <span>
+      <h3>KONTAKTDATEN</h3>
+      <p>conlabz gmbh <br/>
+      Casinostraße 49<br/>
+      56068 Koblenz</p><br/><br/>
+      <p>      Tel: 0261 96096060<br/>
+      Fax: 0261 96096059<br/>
+      info@conlabz.de</p>
+    </span>
+    <div class="container">
+      <div class="footerLink">
+        <a href="https://www.conlabz.de/impressum/" target="_blank"> Impressum</a>
+        <a href="https://www.conlabz.de/widerrufsbelehrung/" target="_blank">Widerrufsbelehrung </a>
+        <a href="https://www.conlabz.de/haftungsausschluss/" target="_blank">Haftungsausschluss </a>
+      </div>
+    </div>
+  </footer>
+  
+     
+  <script type="text/javascript">
+    const contactForm = document.getElementById("contact_form");
+    
+    function handleFormSubmission(event) {
+      event.preventDefault();
+      const formInputs = contactForm.querySelectorAll('input, textarea');
+          
+      formInputs.forEach(input => {
+        const inputId = input.getAttribute('id');
+        document.getElementById(`user_${inputId}`).append(input.value)
+      });
+      
+      contactForm.style.display = "none";
+      document.getElementById("form_data").style.display = "block";
+    }
+    
+    contactForm.addEventListener('submit', handleFormSubmission);
+  </script>
+</body>
+</html>
